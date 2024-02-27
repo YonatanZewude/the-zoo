@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { IAnimalSmall } from "../models/IAnimalSsmall";
+import { IAnimalSmall } from "../models/IAnimalsSmall";
 import { getAnimals } from "../services/animalService";
 import { Animal } from "../components/Animal";
 import "../style/main.scss";

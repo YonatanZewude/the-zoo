@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IAnimalSmall } from "../models/IAnimalSsmall";
+import { IAnimalSmall } from "../models/IAnimalsSmall";
 
 const BASE_URL = "https://animals.azurewebsites.net/api/animals";
 

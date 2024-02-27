@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { IAnimalSmall } from "../models/IAnimalSsmall";
+import { IAnimalSmall } from "../models/IAnimalsSmall";
 import fallbackImage from "../assets/NoImage.jpg"; 
 import placeholderImage from "../assets/loading-placeholder.png";
 import { IAnimal } from "../models/IAnimal";
