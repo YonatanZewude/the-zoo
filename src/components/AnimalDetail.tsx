@@ -17,8 +17,6 @@ export const AnimalDetail = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [errorOccurred, setErrorOccurred] = useState(false);
 
-  
-
   useEffect(() => {
     const fetchAnimals = async () => {
       if (id) {
@@ -38,4 +36,5 @@ export const AnimalDetail = () => {
         }
       }
     };
-};
+
+  }
