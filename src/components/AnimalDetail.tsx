@@ -118,15 +118,15 @@ export const AnimalDetail = () => {
           <h2 className="animal-detail__name">{selectedPet?.name}</h2>
           <p className="animal-detail__desc">{selectedPet?.longDescription}</p>
           <p className="animal-detail__birthday">
-            <span className="animal-detail__label">Birth Year: </span>
+            <span className="animal-detail__label">Födelse år: </span>
             {selectedPet?.yearOfBirth}
           </p>
           <p className="animal-detail__medicine">
-            <span className="animal-detail__label">Medicine: </span>
+            <span className="animal-detail__label">Medicin: </span>
             {selectedPet?.medicine}
           </p>
           <p className="animal-detail__last-fed">
-            <span className="animal-detail__label">Last Fed: </span>
+            <span className="animal-detail__label">Matades sist: </span>
             {formattedLastFedTime}
           </p>
           <button
@@ -134,7 +134,7 @@ export const AnimalDetail = () => {
             disabled={isButtonDisabled}
             onClick={handleFeedClick}
           >
-            {isButtonDisabled ? 'Come back in 3 hours' : `Feed ${selectedPet?.name}`}
+            {isButtonDisabled ? 'Kom tillbaka om 3 timmar' : `Mata ${selectedPet?.name}`}
           </button>
         </div>
       </div>
