@@ -35,7 +35,7 @@ export const Animals = () => {
 
     return (
         <>
-            <h1 className="title"> Welcome To WildWonder Zoo</h1>
+            <h1 className="title"> Välkommen Till WildWonder Zoo</h1>
             <div className="animals">{animalComponents}</div>
         </>
     );

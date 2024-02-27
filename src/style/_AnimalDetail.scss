@@ -73,3 +73,19 @@
         }
     }
 }
+
+.animal-card__status--hungry {
+
+    background-color: #d97575;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.animal-card__status--fed {
+
+    background-color: #60c56c;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 5px;
+}
