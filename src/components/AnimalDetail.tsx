@@ -37,4 +37,107 @@ export const AnimalDetail = () => {
       }
     };
 
-  }
+    const animalsFromLocalStorage = localStorage.getItem('Animals');
+    if (animalsFromLocalStorage) {
+      setAllAnimals(JSON.parse(animalsFromLocalStorage));
+    } else {
+      fetchAnimals();
+    }
+  }, [id]);
+
+  useEffect(() => {
+    const currentAnimal = allAnimals.find((animal) => animal.id === Number(id)) || null;
+
+    if (currentAnimal) {
+      setLastFedTime(currentAnimal.lastFed);
+      setSelectedPet(currentAnimal);
+
+      const lastFeedTime = new Date(currentAnimal.lastFed);
+      const currentTime = new Date();
+
+      const timeDifferenceInMs = currentTime.getTime() - lastFeedTime.getTime();
+      const timeDifferenceInHours = timeDifferenceInMs / (1000 * 60 * 60);
+
+      setIsButtonDisabled(timeDifferenceInHours <= 3);
+    }
+  }, [allAnimals, id]);
+
+ 
+  const handleFeedClick = () => {
+    const currentTime = new Date();
+    const currentTimeAsString = currentTime.toString();
+
+    const updatedTime = allAnimals.map((animal) => {
+      if (animal.id === selectedPet?.id) {
+        return {
+          ...animal,
+          isFed: true,
+          lastFed: currentTimeAsString,
+        };
+      }
+      return animal;
+    });
+
+    localStorage.setItem('Animals', JSON.stringify(updatedTime));
+    setAllAnimals(updatedTime);
+    setIsButtonDisabled(true);
+    setLastFedTime(currentTimeAsString);
+  };
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
+  const handleImageError = () => {
+    setErrorOccurred(true);
+  };
+
+  const formattedLastFedTime = new Date(lastFedTime).toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+
+  return (
+    <>
+      <div className="animal-detail">
+        <div className="animal-detail__image">
+          <img
+            src={errorOccurred ? fallbackImage : selectedPet?.imageUrl || placeholderImage}
+            alt={selectedPet?.name}
+            onLoad={handleImageLoad}
+            onError={handleImageError}
+          />
+          {!imageLoaded && (
+            <div className="animal-detail__placeholder">Loading...</div>
+          )}
+        </div>
+        <div className="animal-detail__text-container">
+          <h2 className="animal-detail__name">{selectedPet?.name}</h2>
+          <p className="animal-detail__desc">{selectedPet?.longDescription}</p>
+          <p className="animal-detail__birthday">
+            <span className="animal-detail__label">Birth Year: </span>
+            {selectedPet?.yearOfBirth}
+          </p>
+          <p className="animal-detail__medicine">
+            <span className="animal-detail__label">Medicine: </span>
+            {selectedPet?.medicine}
+          </p>
+          <p className="animal-detail__last-fed">
+            <span className="animal-detail__label">Last Fed: </span>
+            {formattedLastFedTime}
+          </p>
+          <button
+            className="animal-detail__btn"
+            disabled={isButtonDisabled}
+            onClick={handleFeedClick}
+          >
+            {isButtonDisabled ? 'Come back in 3 hours' : `Feed ${selectedPet?.name}`}
+          </button>
+        </div>
+      </div>
+    </>
+  );
+};
