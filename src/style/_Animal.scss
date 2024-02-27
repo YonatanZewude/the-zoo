@@ -1,0 +1,71 @@
+.animal-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transform: scale(1.02);
+    }
+
+    &__title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    &__image-container {
+        margin-bottom: 10px;
+    }
+
+    &__image {
+        flex: 0 0 auto;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 220px;
+        height: 220px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+        margin: 2px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__desc {
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    &__food-time {
+        font-style: italic;
+        margin-bottom: 10px;
+
+        &--fed {
+            color: green;
+        }
+
+        &--hungry {
+            color: red;
+        }
+    }
+
+    &__btn-read-more {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+}
