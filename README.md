@@ -8,6 +8,8 @@ Single Page Application: Skapa en SPA med React och TypeScript.
 Djurlista: Visa en lista med djur med deras namn och korta beskrivningar. Djurinformation kan hämtas från Djur-API.
 Djurdeta ljer: Implementera en route för att visa mer information om ett djur när det klickas på.
 Mata djur: På djurets detaljerade sida, låt användare markera djuret som matat med hjälp av en knapp. När djuret är matat, ska djurets status uppdateras, visa matningstiden och knappen ska inaktiveras.
+
+  
 För betyget VG:
 Alla krav för G: Implementera alla funktioner som krävs för betyget G.
 Hantera trasiga bildlänkar: Säkerställ att trasiga bildlänkar hanteras på ett snyggt sätt.
