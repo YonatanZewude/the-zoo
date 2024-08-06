@@ -1,1 +1,18 @@
-The ZooAnvänd react med typescript för att skapa en sida för ett zoo. En lista med djur finns tillgänglig på: https://animals.azurewebsites.net/api/animalsDu behöver ladda ner djuren till din applikation och spara dem i applikationen. Det kommer inte gå att ändra djuren via api:t. Förslagsvis lagrar du dem i localStorage ellersessionStorage. För G: •Skapa en SPA (i react med typescript) som innehåller en startsida där djuren presenteras med namn och en kort beskrivning. •Det skall gå att klicka på ett djur för att se mer information om detta djur via en egen route. •Från djurets egna sida skall du kunna markera om djuret nu är matat eller inte via en knapp som heter Mata djur. När du klickar på denna knapp skall djurets status ändras så att det framgår att det är matat. Och det skall inte längre gå att klicka på knappen. Du behöver också lägga in tiden som djuret matades. •Ni behöver ha en god struktur i ert projekt vad gäller komponenter och filer.VG: •Samtliga krav för G•Hantera trasiga bildlänkar på ett snyggt sätt•När du går in på djurets sida nästa gång kontrollerar du om det har gått mer än tre timmar sedan senaste matningen. Om så är fallet nollställs matningen och det skall gå att mata djuret igen. •Ni skall presentera en liten notis på startsidan, samt på djursidan, om att ett djur behöver matas om det är mer än fyra timmar sedan djuret matades.•Ni behöver användaminst en tjänster i er applikation, både för hämtning av data och för gemensamma beräkningar.
+The Zoo - React med TypeScript Applikation
+Översikt
+Skapa en single-page application (SPA) för ett zoo med hjälp av React och TypeScript. Applikationen kommer att visa en lista med djur, låta användare se detaljerad information om varje djur och spåra matningsstatus för djuren.
+
+Funktioner
+För betyget G:
+Single Page Application: Skapa en SPA med React och TypeScript.
+Djurlista: Visa en lista med djur med deras namn och korta beskrivningar. Djurinformation kan hämtas från Djur-API.
+Djurdeta ljer: Implementera en route för att visa mer information om ett djur när det klickas på.
+Mata djur: På djurets detaljerade sida, låt användare markera djuret som matat med hjälp av en knapp. När djuret är matat, ska djurets status uppdateras, visa matningstiden och knappen ska inaktiveras.
+För betyget VG:
+Alla krav för G: Implementera alla funktioner som krävs för betyget G.
+Hantera trasiga bildlänkar: Säkerställ att trasiga bildlänkar hanteras på ett snyggt sätt.
+Matningsstatuskontroll: När man tittar på ett djurs detaljer, kontrollera om det har gått mer än tre timmar sedan senaste matningen. Om så är fallet, nollställ matningsstatus och tillåt djuret att matas igen.
+Matningsnotiser: Visa en notis både på startsidan och djurets detaljerade sida om det har gått mer än fyra timmar sedan djuret senast matades.
+Tjänstanvändning: Använd minst en tjänst i din applikation för att hämta data och göra gemensamma beräkningar.
+Projektstruktur
+Se till att ditt projekt har en välorganiserad struktur vad gäller komponenter och filer.
